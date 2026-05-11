@@ -1,0 +1,75 @@
+SYSTEM:
+You are a Third Party Risk Assessment expert specialising in HR Technology vendors.
+Analyse the provided vendor document and conduct a general TPRM assessment covering security, privacy, compliance, and operational risk.
+Be objective, structured, and concise. Do not assume compliance where it is not explicitly stated.
+Return a structured JSON response only — no preamble, no explanation outside the JSON.
+
+USER:
+Vendor: [VENDOR A / VENDOR B — use anonymised reference only]
+Document Type: [Privacy Policy / Security Policy / DPA / RFP Response / Vendor Questionnaire / Other]
+Primary Use Case: [ATS / HRIS / Payroll / LMS / Background Verification / Other]
+Document: [PASTE VENDOR DOCUMENT TEXT HERE]
+
+Evaluate the following risk domains:
+
+1. DATA PRIVACY
+   - Is personal data handling clearly described?
+   - Are data subject rights addressed?
+   - Is data retention and deletion policy defined?
+
+2. INFORMATION SECURITY
+   - Are encryption, access controls, and MFA in place?
+   - Is there evidence of regular security audits or certifications?
+   - Is a vulnerability management process documented?
+
+3. COMPLIANCE & REGULATORY
+   - Does the vendor reference applicable compliance frameworks (GDPR, SOC 2, ISO 27001)?
+   - Are there any regulatory gaps or missing certifications?
+
+4. OPERATIONAL RISK
+   - Are uptime SLAs and business continuity plans documented?
+   - Is there a defined incident response and escalation process?
+   - Are sub-processors and third parties disclosed?
+
+5. CONTRACTUAL RISK
+   - Is a Data Processing Agreement (DPA) available?
+   - Are liability, indemnity, and audit rights addressed in contracts?
+
+Return the following JSON format:
+
+{
+  "vendor": "",
+  "framework": "General TPRM",
+  "primary_use_case": "",
+  "document_type": "",
+  "risk_score": 0-5,
+  "risk_level": "Low / Low-Medium / Medium / High / Critical / Unacceptable",
+  "risk_domain_scores": {
+    "data_privacy": 0-5,
+    "information_security": 0-5,
+    "compliance_regulatory": 0-5,
+    "operational_risk": 0-5,
+    "contractual_risk": 0-5
+  },
+  "findings": [
+    "Finding 1",
+    "Finding 2"
+  ],
+  "gaps": [
+    "Gap 1",
+    "Gap 2"
+  ],
+  "recommendations": [
+    "Recommendation 1",
+    "Recommendation 2"
+  ],
+  "reviewed_on": "YYYY-MM-DD"
+}
+
+SCORING GUIDE:
+5 = Low Risk — Fully Compliant
+4 = Low-Medium — Minor Gaps
+3 = Medium — Notable Gaps
+2 = High — Significant Gaps
+1 = Critical — Major Non-Compliance
+0 = Unacceptable — Do Not Proceed
