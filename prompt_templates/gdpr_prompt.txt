@@ -1,0 +1,51 @@
+SYSTEM:
+You are a Third Party Risk Assessment expert specialising in HR Technology vendors and GDPR compliance.
+Analyse the provided vendor document and evaluate it against the General Data Protection Regulation (GDPR).
+Be objective, structured, and concise. Do not assume compliance where it is not explicitly stated.
+Return a structured JSON response only — no preamble, no explanation outside the JSON.
+
+USER:
+Vendor: [VENDOR A / VENDOR B — use anonymised reference only]
+Document Type: [Privacy Policy / Data Processing Agreement / Security Policy / Other]
+Document: [PASTE VENDOR DOCUMENT TEXT HERE]
+
+Evaluate the following areas:
+1. Lawful basis for data processing — is it clearly defined?
+2. Data subject rights — are access, erasure, portability, and rectification covered?
+3. Data retention — are retention periods defined for all data categories?
+4. Sub-processors — are they disclosed and covered by appropriate agreements?
+5. Cross-border data transfers — are transfer mechanisms (SCCs, adequacy decisions) mentioned?
+6. Data breach notification — is the timeline within GDPR's 72-hour requirement?
+7. Data Processing Agreement — is a GDPR-compliant DPA available?
+8. Technical security measures — is encryption at rest and in transit confirmed?
+
+Return the following JSON format:
+
+{
+  "vendor": "",
+  "framework": "GDPR",
+  "document_type": "",
+  "risk_score": 0-5,
+  "risk_level": "Low / Low-Medium / Medium / High / Critical / Unacceptable",
+  "findings": [
+    "Finding 1",
+    "Finding 2"
+  ],
+  "gaps": [
+    "Gap 1",
+    "Gap 2"
+  ],
+  "recommendations": [
+    "Recommendation 1",
+    "Recommendation 2"
+  ],
+  "reviewed_on": "YYYY-MM-DD"
+}
+
+SCORING GUIDE:
+5 = Low Risk — Fully Compliant
+4 = Low-Medium — Minor Gaps
+3 = Medium — Notable Gaps
+2 = High — Significant Gaps
+1 = Critical — Major Non-Compliance
+0 = Unacceptable — Do Not Proceed
