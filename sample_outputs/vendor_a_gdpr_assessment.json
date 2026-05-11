@@ -1,0 +1,33 @@
+{
+  "vendor": "Vendor A",
+  "framework": "GDPR",
+  "primary_use_case": "Applicant Tracking System (ATS)",
+  "document_type": "Privacy Policy",
+  "risk_score": 3,
+  "risk_level": "Medium",
+  "findings": [
+    "Privacy policy clearly states lawful basis for processing candidate data",
+    "Data subject access request (DSAR) process is documented with a defined response process",
+    "Encryption at rest and in transit is confirmed",
+    "Vendor references GDPR compliance in their privacy policy",
+    "Right to erasure is acknowledged and a deletion request process is available"
+  ],
+  "gaps": [
+    "No mention of data retention timelines for rejected candidates",
+    "Sub-processors list is not publicly disclosed and was not provided upon request",
+    "Data breach notification timeline is not explicitly stated — exceeds GDPR 72-hour requirement",
+    "Cross-border data transfer mechanisms (SCCs or adequacy decisions) are not referenced",
+    "Data Processing Agreement (DPA) is not proactively provided — available only upon request"
+  ],
+  "recommendations": [
+    "Request vendor to share updated sub-processor list and include disclosure obligation in DPA",
+    "Negotiate contractual SLA for breach notification within 48 hours to align with GDPR requirement",
+    "Confirm and document data retention and deletion policy for rejected candidate records (recommended: 12 months)",
+    "Request clarification on cross-border data transfer mechanisms and obtain SCCs if applicable",
+    "Ensure a fully executed GDPR-compliant DPA is in place prior to go-live or contract renewal"
+  ],
+  "reviewed_on": "2025-05-11",
+  "assessed_by": "Shamshuddin Manji",
+  "next_review_due": "2025-11-11",
+  "notes": "This is a sample assessment for illustrative purposes only. Vendor identity has been anonymised. All findings and gaps are based on publicly available documentation reviewed at the time of assessment. Always involve legal and compliance teams for actual vendor risk decisions."
+}
